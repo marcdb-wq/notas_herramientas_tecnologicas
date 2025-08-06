@@ -1,0 +1,27 @@
+##############  INSTA;ACION DE GIT EN MAC   #################
+
+
+
+##############      COMANDOS GIT        #################
+
+
+git config --list
+git config --global user.name "Tu Nuevo Nombre"
+git config user.name "Tu Nuevo Nombre"
+
+
+
+
+git clone --branch <rama remota especifica que queremos clonar> https://...........
+git branch -a
+git fetch
+git pull
+git merge <rama con la que haremos merge>
+git status
+git add .   origin      (git restore .       este es para quitar cambios)
+
+git commit -m "descripcion del cambio"
+git push origin <rama remota a la cual le enviaremos el cambio>
+git remote update origin --prune        (actualiza las referencias remotas)
+git checkout -b <nombre de rama local a crear> origin/<nombre de rama remota con la que queremos ligar la local>
+
