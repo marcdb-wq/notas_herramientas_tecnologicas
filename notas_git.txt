@@ -4,6 +4,14 @@
 
 ##############      COMANDOS GIT        #################
 
+
+git config --list
+git config --global user.name "Tu Nuevo Nombre"
+git config user.name "Tu Nuevo Nombre"
+
+
+
+
 git clone --branch <rama remota especifica que queremos clonar> https://...........
 git branch -a
 git fetch
