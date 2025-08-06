@@ -1,4 +1,4 @@
-##############  INSTA;ACION DE GIT EN MAC   #################
+##############  INSTALACION DE GIT EN MAC   #################
 
 
 
@@ -7,7 +7,9 @@
 
 git config --list
 git config --global user.name "Tu Nuevo Nombre"
+git config --global user.email "Tu Nuevo Nombre"
 git config user.name "Tu Nuevo Nombre"
+git config user.email "Tu Nuevo Nombre"
 
 
 

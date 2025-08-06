@@ -8,8 +8,13 @@ NOTAS PARA DESARROLLAR EN ANGULAR 18
 
 
 ##### COMANDOS IMPORTANTES DE NVM (version de node a usar)  ########
-
+nvm ls-remote --lts
+nvm install <version de node a instalar>
+nvm list
+nvm use <version a usar>
 
 
 ##### COMANDOS IMPORTANTES DE NODE  ##########
+npm --version
+npm list -g     (programas instalados con npm)
 
