@@ -1,0 +1,34 @@
+###### video de sql server con docker   https://www.youtube.com/watch?v=uHz9xOiaBbw
+
+---comando para decargar la imagen latest de sqlserer
+docker pull mcr.microsoft.com/mssql/server
+
+
+--comando para levantar la base sqlserver
+---y vemos que se levanta con las credenciales 
+---usuario: sa
+---pwd: yourStrong#Password
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=yourStrong#Password" -p 1433:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
+
+
+
+
+---comando para ver contenedores corriendo
+docker ps
+
+---comando para detener contenedor con etiqueta name
+docker stop sqlserver
+
+---comando para ver contenedores detenidos
+docker ps -a
+
+
+--- comando para borrar contenedor con la etiqueta name
+docker rm sqlserver 
+
+
+
+
+
+

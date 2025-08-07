@@ -1,0 +1,65 @@
+CREATE TABLE  cities
+(
+	city_id bigint primary key,
+	city_code varchar(5),
+	city_name varchar(100),
+	country_id bigint
+)
+
+
+CREATE TABLE countries
+(
+	country_id bigint primary key,
+	country_code varchar(3),
+	country_name varchar(50)
+)
+
+
+CREATE TABLE people
+(
+	id_person bigint primary key,
+	name_person varchar(100),
+	city_id bigint,
+	country_id bigint
+	
+)
+
+TRUNCATE TABLE people	
+	
+DROP TABLE people
+
+ALTER TABLE people ADD COLUMN phone_person smallint
+ALTER TABLE people ADD COLUMN date_create timestamp
+	
+ALTER TABLE people ALTER COLUMN phone_person TYPE int
+
+INSERT INTO people (id_person,name_person,city_id,country_id) VALUES (5,'marco',2,4);
+
+UPDATE people SET phone_person = 5555666789 WHERE id_person = 5
+
+	
+SELECT column_name, data_type ,character_maximum_length
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE table_name = 'people'
+
+
+	
+	date_create::date   --parsea de un tipo timestamp a un tipo date
+	CAST(SUBSTRING(name_person, 1, 5) AS integer) --- este es un ejemplo con el campo name_person pero hagamos de cuanta 
+                                                --- que es una cadena con digitos numericos, ejeplo '2097609835728',
+												 --- lo que obtendriamos seria como entero 20976, ya que es un substring  
+												 --- desde la posicion 1 mas 5 posiciones,(NOOO es como un arreglo en java que la primer posicion es 0) 
+												 --- SELECT CAST(SUBSTRING('2097609835728', 1, 5) AS integer) --->20976
+												 --- SELECT CAST(SUBSTRING('2097609835728', 7, 2) AS integer) --->98
+
+	SUBSTRING(current_database(), 1, 5)	--- se obtiene un subtring de la base de datos que se esta ocupando
+											--- SELECT SUBSTRING(current_database(), 1, 5)
+
+
+	
+
+
+
+
+
+

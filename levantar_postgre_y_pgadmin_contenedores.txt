@@ -1,0 +1,60 @@
+
+
+INICIAR POSTGRE Y PGADMIN (por contenedores)
+1.- en git bash nos metemos a la ruta Documents/SQL (ya que aqui se encuantra el archivo .yml para levantar)
+2.- ejecuta el comando
+	docker compose up -d
+	
+NOTA: desde tabel plus a la base si podemos accede desde localhost, pero desde pgadmin tendriamos que colocar el nombre del container de postgre (el valor de container_name), ya que
+hace una red cuando se levantan los dos conteedores mediante docker compose
+
+3.- para bajar todos los contenedores que estan corriendo, en eeste caso dos, ejecutamos el siguinte comando
+	docker compose down
+	
+	
+####################################################################################################################################################################################################		
+	
+	
+
+https://gist.github.com/Klerith/591fff6e2a393f19beb698ed44f0aa5e
+
+instalar docker desktop 
+instalar table plus
+
+######desde terminal
+
+==== DESCARGAR LA IMAGENES, ESTO LOPODEMOS HACER DESDE CUALQUIER RUTA DENTRO DE LA TERMINAL
+
+docker pull postgres:15.3
+docker pull dpage/pgadmin4
+
+----- INICIAR LOS CONTENEDORES DE POSTGRES U PGADMIN, DENTRO DE LA RUTA DONDE SE EMCUENTRA EL ARCHIVO DOCKER COMPOSE
+
+docker compose up -d
+
+----- DETENER EL O LOS CONTENEDORES 
+
+docker compose down
+
+----------NOTA POR SI SALE ERROR AL USAR UBUNTO Y QUERER LEVANTAR PGADMIN
+En Ubuntu pude solucionar el no poder acceder PgAdmin agregando user: '$UID:$GID' en la parte de pdAdmin en docker compose y quedo asi
+
+pdAdmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    restart: always
+    depends_on:
+      - myDB
+    ports:
+      - 8080:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=alumno@google.com
+      - PGADMIN_DEFAULT_PASSWORD=123456
+    user: '$UID:$GID'
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+      - ./pgadmin:/certs/server.cert
+      - ./pgadmin:/certs/server.key
+      - ./pgadmin:/pgadmin4/servers.json	
+	
+

@@ -1,0 +1,13 @@
+
+
+################## (VIDEO)	crear un proyecto basico maven y su jar ejecutable desde intellij
+
+este nos ayuda paso a paso a construir  y ejecutar un jar ejecutable implementado con maven en intellij,tambien nos muestra como agregar dependencias que nos hayan faltado de agregar desde el inicio asi no tendrmos que ir a buscar manualmente al repositorio de maven
+
+
+
+Use IntelliJ IDEA to create an EXECUTABLE JAR With Dependencies Using Maven
+https://www.youtube.com/watch?v=870XIYMrlSo&t=791s
+
+
+##################
