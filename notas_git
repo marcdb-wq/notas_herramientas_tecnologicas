@@ -20,7 +20,12 @@ git fetch
 git pull
 git merge <rama con la que haremos merge>
 git status
-git add .   origin      (git restore .       este es para quitar cambios)
+git add .        
+
+git restore .       este es para quitar cambios que aun no se mandaron a staging
+git reset    comando que regresa todos los archivos que se encuentran en statging
+git restore --staged <archivo>    regresa archivo en especifico del area statging
+
 
 git commit -m "descripcion del cambio"
 git push origin <rama remota a la cual le enviaremos el cambio>
