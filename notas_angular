@@ -18,3 +18,19 @@ nvm use <version a usar>
 npm --version
 npm list -g     (programas instalados con npm)
 
+npm install -g @angular/cli (si no se puede agregar, utilzar sudo)
+npm install -g @angular/cli@18.2.3
+ng version    (ver la versio de anular instalado con el node que esta en uso)
+ng new <nombre-proyecto>
+npm start
+
+
+
+iniciando con TypeScript
+
+npm create vite@lastest
+npm install
+npm run dev
+
+
+

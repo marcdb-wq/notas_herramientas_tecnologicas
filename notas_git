@@ -24,6 +24,6 @@ git add .   origin      (git restore .       este es para quitar cambios)
 
 git commit -m "descripcion del cambio"
 git push origin <rama remota a la cual le enviaremos el cambio>
-git remote update origin --prune        (actualiza las referencias remotas)
+git remote update origin --prune    o   git remote update origin    (actualiza las referencias remotas)
 git checkout -b <nombre de rama local a crear> origin/<nombre de rama remota con la que queremos ligar la local>
 

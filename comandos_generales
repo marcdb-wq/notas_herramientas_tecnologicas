@@ -1,0 +1,3 @@
+##########     COMANDOS EN POWER SHELL      ########
+
+test-netconnection -ComputerName 10.34.5.1 -Port 8065

@@ -1,0 +1,33 @@
+########        COMANDOS EN EL SHELL DEL SDK    #########
+
+gcloud auth application-default login   (loguearte con el cli de GCP y poder usar los servicios)
+
+gcloud auth list    (verificar que la service account este activada)
+
+gcloud projects list    (lista de proyectos disponibles)
+
+gcloud config set project <nombre del proyecto>
+
+
+#######     configurar service account para probar algu DATAFLOW    ######
+
+gcloud auth activate-service-account <ejemplo de nombre -dataflow...@proyecto.....iam..com> --key-file=<ejemplo ruta c:archivo .json>
+gcloud config set account <ejemplo de nombre -dataflow...@proyecto.....iam..com>
+
+
+------lo siguinte es en el id o en terminal para desplegar y levantar un dataflow de manera local, si sequiere en ambiente nube el dueno deberia compartir el comando-------
+
+DEPLEGAR EN PROYECTO DE NUBE
+mvn compile exec:java -Dexec.mainClasss=<ruta de la clase main ejemplo org.madb.MainClass> =Dexec.cleanupDaemonThreads=false -Dexec.args=" --project=<nombre del proyecto en la nube> --serviceAcount=<ejemplo de nombre -dataflow...@proyecto.....iam..com> --region=<zona de la instancia --<nombre de variable de entrada de los parametros de entrada>=<valor de la variable de entrada>
+
+EJECUTAR
+mvn compile exec:java --Dexec.mainClasss=<ruta de la clase main ejemplo org.madb.MainClass> -Dexec.args=" --project=<nombre del proyecto en la nube> --serviceAcount=<ejemplo de nombre -dataflow...@proyecto.....iam..com> --region=<zona de la instancia --<nombre de variable de entrada de los parametros de entrada>=<valor de la variable de entrada>
+
+
+
+
+##########     TUNEL HACIA BASE DE DATOS EN LA NUBE     ##############
+
+gcloud auth login
+gcloud config set set project <proyecto donde se encuntra la base de datos>
+gcloud compute start-lap-tunnel <nombre del balanceo mig....>> <pueto ejemplo postgre 5432> --local-host-port=localhost:<puerto de nuestra maquina en el que queremos que escuche> --zone=<zona en la que esta la base>
