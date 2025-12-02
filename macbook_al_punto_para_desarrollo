@@ -1,0 +1,109 @@
+
+(Cmd + Espacio) y escribir "Terminal".
+
+######## INSTALAR Homebrew ###########
+ejeuctar los siguintes comandos
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    (los siguientes tres comandos se pueden ejecutar juntos)
+    echo >> /Users/madb/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/madb/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+validar instalacion con siguinte comando
+
+brew --version
+
+
+
+
+
+
+
+
+####### INSTALAR JAVA  ###############
+https://www.youtube.com/watch?v=BWC8sRfd09I
+https://www.oracle.com/java/technologies/downloads/#jdk21-mac
+
+java --version
+/usr/libexec/java_home -V
+nano ~/.zshrc
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
+echo $JAVA_HOME
+
+
+
+
+
+
+
+
+####### INSTALAR PSQL, CLIENTE PARA POSTGRES DESDE TERMINAL  ###########
+
+brew doctor
+brew update
+brew install libpq
+brew link --force libpq
+
+
+NOTA: lo siguinte no se hizo, seria ver para que se realiza, que beneficios trae
+libpq is keg-only, which means it was not symlinked into /opt/homebrew,
+because it conflicts with PostgreSQL.
+
+/*
+If you need to have libpq first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/libpq/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find libpq you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+==> Summary
+🍺  /opt/homebrew/Cellar/libpq/18.1: 2,423 files, 35.4MB
+==> Running `brew cleanup libpq`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Caveats
+==> libpq
+libpq is keg-only, which means it was not symlinked into /opt/homebrew,
+because it conflicts with PostgreSQL.
+
+If you need to have libpq first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/libpq/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find libpq you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+
+
+If you need to have this software first in your PATH instead consider running:
+  echo 'export PATH="/opt/homebrew/opt/libpq/bin:$PATH"' >> ~/.zshrc
+*/
+
+
+
+probar conexion a base de datos (primero debimos haber levantado postgres o de donde se encunete la base)
+ingresaremos el siguinte comando reemplazando lo que se necesite:  psql -h <host> -p <puerto> -U <usuario> -d <basededatos>
+
+
+
+
+#####  INSTALAR MAVEN   ###############
+ejecutar comando 
+
+brew install maven
+mvn -v
+
+
+
+####### INSTALAR VISUAL STUDIO CODE  ###########
+
+
+
+
+DESPUES DE INSTALAR VSC INSTALAREMOS LAS SIGUIENTES EXTENSIONES
+PostgreSQL Management Tool
+Extension Pack for Java
+
+
+
